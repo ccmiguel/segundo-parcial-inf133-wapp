@@ -8,18 +8,25 @@
     <title>{{ title }}</title>
 </head>
 <body>
-    <h1 class="title">MVC Segundo Parcial</h1>
+    <h1 class="title">DEMO - Caja Nacional de Salud</h1>
     {% if current_user.is_authenticated %}
     <nav class="breadcrumb" aria-label="breadcrumbs">
         <div id="navbarBasicExample" class="navbar-menu">
             <div class="navbar-start">
                 {% if current_user.has_role("admin") %}
+                <a class="navbar-item" href="{{ url_for('user.list_users') }}">
+                    Lista de Usuarios
+                </a>
                 <a class="navbar-item" href="{{ url_for('patient.create_patient') }}">
-                    Crear Paciente
+                    Crear Patient
                 </a>
                 {% endif %}
+                <a class="navbar-item" href="{{ url_for('user.profile', id=current_user.id) }}">
+                    Perfil
+                </a>
+                
                 <a class="navbar-item" href="{{ url_for('patient.list_patients') }}">
-                    Lista de Pacientes
+                    Lista de Patients
                 </a>
                 <a class="navbar-item" href="{{ url_for('user.logout') }}">
                     Cerrar Sesión

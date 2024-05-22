@@ -1,30 +1,36 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h2 class="subtitle is-2">Editar Paciente</h2>
+<h2 class="subtitle is-2">Editar Patient</h2>
 <form method="post">
     <div class="field">
-        <label for="name">Nombres:</label>
+        <label for="id">ID:</label>
         <div class="control">
-            <input type="text" id="name" name="name" required class="input" value={{ patient.name }}>
+            <input type="number" id="id" name="id" required class="input" value="{{ patient.id }}">
         </div>
     </div>
     <div class="field">
-        <label for="species">Apellidos:</label>
+        <label for="name">Name:</label>
         <div class="control">
-            <input type="text" id="species" name="species" required class="input" value={{ patient.last_name }}>
+            <input type="text" id="name" name="name" required class="input" value="{{ patient.autor }}">
         </div>
     </div>
     <div class="field">
-        <label for="ci">CI:</label>
+        <label for="lastname">Lastname:</label>
         <div class="control">
-            <input type="number" id="ci" name="ci" required class="input" value={{ patient.ci }}>
+            <input type="text" id="lastname" name="lastname" required class="input" value="{{ patient.lastname }}">
         </div>
     </div>
     <div class="field">
-        <label for="birth_date">Fecha de Nacimiento:</label>
+        <label for="ci">Ci:</label>
         <div class="control">
-            <input type="text" id="birth_date" name="birth_date" required class="input" value= {{ patient.birth_date }}>
+            <input type="text" id="ci" name="ci" required class="input" value="{{ patient.ci }}">
+        </div>
+    </div>
+    <div class="field">
+        <label for="birth_day">Birth_day:</label>
+        <div class="control">
+            <input type="text" id="birth_day" name="birth_day" required class="input" value="{{ patient.birth_day }}">
         </div>
     </div>
     <input type="submit" value="Guardar Cambios" class="button is-primary">
