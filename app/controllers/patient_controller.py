@@ -14,6 +14,7 @@ def list_patients():
     patients = Patient.get_all()
     return patient_view.list_patients(patients)
 
+
 @patient_bp.route("/patients/create", methods=["GET", "POST"])
 @login_required
 @role_required("admin")
